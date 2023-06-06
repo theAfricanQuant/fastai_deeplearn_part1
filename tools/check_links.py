@@ -66,8 +66,7 @@ class LinkChecker(object):
     def get_soup(self):
         with open(self.mdfilename, 'r') as f:
             md = markdown.markdown(f.read())
-        soup = BeautifulSoup(md, "lxml")
-        return soup
+        return BeautifulSoup(md, "lxml")
 
     def get_links(self):
         for link in self.soup.find_all('a', href=True):
